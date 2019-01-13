@@ -1,4 +1,4 @@
-# From the original file example_evaluator.py by Sharada Mohanty (https://github.com/AICrowd/aicrowd-example-evaluator)
+# From the original file example_evaluator.py by Sharada Mohanty: https://github.com/AICrowd/aicrowd-example-evaluator 
 # Adapted to MEDIQA 2019 by Asma Ben Abacha (Accuracy for Tasks 1 and 2) 
 
 import pandas as pd
@@ -25,13 +25,14 @@ class MediqaEvaluator:
     aicrowd_submission_id = client_payload["aicrowd_submission_id"]
     aicrowd_participant_uid = client_payload["aicrowd_participant_id"]
     
-    ## 
+    # Result file format (tasks 1 and 2): pair_id,label (csv file)
+
     col_names = ['pair_id', 'label']
 
     submission = pd.read_csv(submission_file_path, header=None, names=col_names)
     gold_truth = pd.read_csv(self.answer_file_path, header=None, names=col_names)
 
-    # Drop duplicates except for the first occurrence.
+    # Drop duplicates except for the first occurrence
     submission = submission.drop_duplicates(['pair_id'])
 
     submission.label = submission.label.astype(str)
