@@ -1,6 +1,6 @@
 # MEDIQA2019
 
-Challenge on Textual Inference and Question Entailment in the Medical Domain 
+Challenge on Textual Inference and Question Entailment in the Medical Domain @ ACL-BioNLP 2019 
 https://sites.google.com/view/mediqa2019
 
 Training Data
