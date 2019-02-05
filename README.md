@@ -11,6 +11,12 @@ Training Data
 - Task 2 (RQE): https://github.com/abachaa/RQE_Data_AMIA2016
 - Task 3 (QA): https://github.com/abachaa/MEDIQA2019/tree/master/MEDIQA_Task3_QA 
 
+Evaluation Scripts
+-------------------
+
+https://github.com/abachaa/MEDIQA2019/tree/master/Eval_Scripts
+
+
 Contact Information
 -------------------
 - Asma Ben Abacha: asma.benabacha@nih.gov
