@@ -8,7 +8,10 @@ Mailing List: https://groups.google.com/forum/#!forum/bionlp-mediqa
 Task3: Question Answering (QA)
 ============================== 
 
-Participants are tasked to filter and re-rank the provided answers.
+Participants are tasked to:
+- filter/classify the provided answers (1: correct, 0: incorrect). 
+- re-rank the answers.  
+
 Reuse of the systems developed in the first and second tasks is highly encouraged.
 
 - For instance: 
@@ -32,6 +35,8 @@ a) SystemRank: corresponds to CHiQA's rank. 
 b) ReferenceRank: corresponds to the correct rank.  
 
 c) ReferenceScore: is an additional score that we provide only in the training and validation sets, and that corresponds to the manual judgment/rating of the answer [4: Excellent, 3: Correct but Incomplete, 2: Related, 1: Incorrect]. 
+
+For the answer classification task: answers with scores 1 and 2 are considered as incorrect (label 0), and answers with scores 3 and 4 are considered as correct (label 1).  
  
 ===================================
 Task3-QA: Validation & Test Sets
@@ -57,7 +62,9 @@ Task3-QA: Submission Format
 1) Each line should have the following format: QuestionID,AnswerID,Label. 
   Label = 0 (incorrect answer) 
   Label = 1 (correct answer)
-2) The line number should correspond to the rank of the answer.
+  
+2) The line order should correspond to the rank of the answer.
+
 Incorrect answers (label values of 0) will be used to compute accuracy.
 For rank-based measures, incorrect answers will be filtered out automatically by our evaluation script. 
 
