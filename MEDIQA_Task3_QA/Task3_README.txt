@@ -32,9 +32,9 @@ We provide two datasets of medical questions and the associated answers retrieve
 
 a) SystemRank: corresponds to CHiQA's rank. 
 
-b) ReferenceRank: corresponds to the correct rank. ** We replaced the rank of the incorrect answers by 0 in the validation set and the training sets (V2).     
+b) ReferenceRank: corresponds to the correct rank. 
 
-c) ReferenceScore: is an additional score that we provide only in the training and validation sets, and that corresponds to the manual judgment/rating of the answer [4-Excellent, 3-Incomplete, 2-Related, 1-Incorrect]. 
+c) ReferenceScore: is an additional score that we provide only in the training and validation sets, and that corresponds to the manual judgment/rating of the answer [4: Excellent, 3: Correct but Incomplete, 2: Related, 1: Incorrect].  
 
 For the answer classification task: answers with scores 1 and 2 are considered as incorrect (label 0), and answers with scores 3 and 4 are considered as correct (label 1).  
  
