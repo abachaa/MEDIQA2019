@@ -63,7 +63,7 @@ Task3-QA: Submission Format
   Label = 0 (incorrect answer) 
   Label = 1 (correct answer)
   
-2) The line order should correspond to the rank of the answer.
+2) For correct answers (label 1), the line order should correspond to the rank of the answer. 
 
 Incorrect answers (label values of 0) will be used to compute accuracy.
 For rank-based measures, incorrect answers will be filtered out automatically by our evaluation script. 
