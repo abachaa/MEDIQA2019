@@ -181,11 +181,15 @@ class MediqaEvaluator:
                 if x in submitted_correct_answers:
                     matched_gold_subset.append(x)
 
-            rho, p_value = scipy.stats.spearmanr(submitted_correct_answers, matched_gold_subset)
-            if np.isnan(rho):
-                rho = 0.0
-                sp_nan_ignoredQs += 1
-            spearman += rho
+			rho = 0.
+			p_value = 0.
+
+			if len(submitted_correct_answers) > 0 and len(matched_gold_subset) > 0:	
+				rho, p_value = scipy.stats.spearmanr(submitted_correct_answers, matched_gold_subset)
+				if np.isnan(rho):
+					sp_nan_ignoredQs += 1
+            
+			spearman += rho
             pv += p_value
             ref_sizeAt5 += min(5, len(correct_answers[qid]))
             ref_sizeAt10 += min(10, len(correct_answers[qid]))
@@ -193,7 +197,12 @@ class MediqaEvaluator:
 
         question_nb = len(question_ids)
         q_nb_spearman = question_nb - sp_nan_ignoredQs
-        spearman = spearman / q_nb_spearman
+		
+		if q_nb_spearman > 0:
+			spearman = spearman / q_nb_spearman
+		else:
+			spearman = 0.
+			
         P1 = P1 / question_nb
         P5 = P5 / ref_sizeAt5
         P10 = P10 / ref_sizeAt10
