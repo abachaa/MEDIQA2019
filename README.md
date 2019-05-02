@@ -8,7 +8,7 @@ Mailing List: https://groups.google.com/forum/#!forum/bionlp-mediqa
 Datasets 
 ---------
 
-- Task 1 (NLI): https://jgc128.github.io/mednli/ 
+- Task 1 (NLI): https://alpha.physionet.org/content/mednli-bionlp19/1.0.0/
 - Task 2 (RQE): https://github.com/abachaa/MEDIQA2019/tree/master/MEDIQA_Task2_RQE
 - Task 3 (QA): https://github.com/abachaa/MEDIQA2019/tree/master/MEDIQA_Task3_QA
 
