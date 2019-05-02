@@ -15,10 +15,12 @@ Participants are tasked to:
 Reuse of the systems developed in the first and second tasks is highly encouraged.
 
 - For instance: 
-i) the RQE system could be used to retrieve answered questions (e.g. from the MedQuAD dataset) that are entailed from the original questions and use their answers to validate the system's answers and re-rank them; 
+i) the RQE system could be used to retrieve answered questions (e.g. from the MedQuAD dataset **) that are entailed from the original questions and use their answers to validate the system's answers and re-rank them; 
 ii) the NLI system could be used to identify the relations (i.e. entailment, contradiction, neutral) between the answers of the same question, as well as the answers of the questions related by the entailment relation.
    
 - We encourage all other ideas and approaches for using textual inference and question entailment to filter and re-rank the retrieved answers.  
+
+** Data: https://github.com/abachaa/MedQuAD    Paper: https://arxiv.org/abs/1901.08079 
 
 ========================
 Task3-QA: Training Sets 
