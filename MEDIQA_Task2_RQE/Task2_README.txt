@@ -7,9 +7,9 @@ Mailing List: https://groups.google.com/forum/#!forum/bionlp-mediqa
 The objective of the RQE task is to identify entailment between two questions in the context of QA. We use the following definition of question entailment: “a question A entails a question B if every answer to B is also a complete or partial answer to A” [1]
     [1] A. Ben Abacha & D. Demner-Fushman. “Recognizing Question Entailment for Medical Question Answering”. AMIA 2016.
  
-==============================
-Training and Validation sets 
-============================== 
+=========================================
+Training and Validation sets (AMIA 2016)
+=========================================
 
 The RQE training and validation sets are already published here: https://github.com/abachaa/RQE_Data_AMIA2016
 - Training Dataset: A collection of 8,588 clinical question-question pairs.
@@ -27,6 +27,7 @@ Recognizing Question Entailment for Medical Question Answering. Asma Ben Abacha 
 		   url       = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5333286/} 
       
 ==============================
-New Test Set
+New Test Set (MEDIQA 2019)
 ============================== 
 
+https://github.com/abachaa/MEDIQA2019/blob/master/MEDIQA_Task2_RQE/MEDIQA2019-Task2-RQE-TestSet-wLabels.xml 
