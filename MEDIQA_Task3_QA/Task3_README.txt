@@ -44,18 +44,36 @@ For the answer classification task: answers with scores 1 and 2 are considered a
 Task3-QA: Validation & Test Sets
 ===================================
 
-The validation and test sets will be generated from a recent version of the medical QA system CHiQA, and will cover similar types of questions about diseases and drugs.  
+The validation and test sets are generated from a recent version of the medical QA system CHiQA, and cover similar types of questions about diseases and drugs.  
 
-The test set will have the same format, except that we will provide only the systemRank of the answer. 
+The test set has the same format, the answers are sorted by SystemRank (CHiQA's rank).    
+
 <Question QID="">
         <QuestionText></QuestionText>
         <AnswerList>
-            <Answer AID="" SystemRank="">
+            <Answer AID="">
                 <AnswerURL></AnswerURL>
                 <AnswerText></AnswerText>
             </Answer>
         <AnswerList>
  </Question>
+ 
+ All datasets are available here: https://github.com/abachaa/MEDIQA2019/tree/master/MEDIQA_Task3_QA 
+ 
+==============================
+Reference 
+============================== 
+
+If you use the QA training, validation or test sets, please cite our overview paper:     
+
+Asma Ben Abacha, Chaitanya Shivade, and Dina Demner-Fushman. Overview of the MEDIQA 2019 Shared Task on Textual Inference, Question Entailment and Question Answering. ACL-BioNLP 2019. 
+
+@inproceedings{MEDIQA2019, 
+  author    = {Asma {Ben Abacha} and Chaitanya Shivade and Dina Demner{-}Fushman},  
+  title     = {Overview of the MEDIQA 2019 Shared Task on Textual Inference, Question Entailment and Question Answering}, 
+  booktitle = {ACL-BioNLP 2019},
+  year      = {2019}
+ }
 
 ===================================
 Task3-QA: Submission Format 
