@@ -37,14 +37,9 @@ If you use this dataset, please cite our overview paper:
 Asma Ben Abacha, Chaitanya Shivade, and Dina Demner-Fushman. Overview of the MEDIQA 2019 Shared Task on Textual Inference, Question Entailment and Question Answering. ACL-BioNLP 2019.
 
 @inproceedings{MEDIQA2019, 
-
   author    = {Asma {Ben Abacha} and Chaitanya Shivade and Dina Demner{-}Fushman},  
-  
   title     = {Overview of the MEDIQA 2019 Shared Task on Textual Inference, Question Entailment and Question Answering}, 
-  
   booktitle = {ACL-BioNLP 2019},
-  
-  year      = {2019}
-  
+  year      = {2019}  
 }
-
+ 
