@@ -1,6 +1,6 @@
-# From the original file example_evaluator.py by Sharada Mohanty (https://github.com/AICrowd/aicrowd-example-evaluator) 
-# Adapted for MEDIQA 2019 by Asma Ben Abacha --Accuracy for Tasks 1 and 2 (NLI and RQE) & MRR, Accuracy, Precision, and Spearman's rank correlation coefficient.
-# Last update on April 16, 2019. 
+# From the original file example_evaluator.py by Sharada Mohanty (https://github.com/AICrowd/aicrowd-example-evaluator)
+# Adapted for MEDIQA 2019 by Asma Ben Abacha --Accuracy for Tasks 1 and 2 (NLI and RQE) & MRR, Accuracy, Precision, and Spearman's rank correlation coefficient for Task 3 (QA).
+# Updated on May 6, 2019. 
 
 import pandas as pd
 import numpy as np
@@ -10,7 +10,7 @@ import scipy.stats
 class MediqaEvaluator:
     def __init__(self, answer_file_path, task=1, round=1):
         """
-        `round` : Holds the round for which the evaluation is being done. 
+        `round` : Holds the round for which the evaluation is being done.
         can be 1, 2...upto the number of rounds the challenge has.
         Different rounds will mostly have different ground truth files.
         """
@@ -36,7 +36,7 @@ class MediqaEvaluator:
         """
         submission_file_path = client_payload["submission_file_path"]
 
-        # Result file format: pair_id,label (csv file) 
+        # Result file format: pair_id,label (csv file)
 
         col_names = ['pair_id', 'label']
 
@@ -71,7 +71,7 @@ class MediqaEvaluator:
         """
         submission_file_path = client_payload["submission_file_path"]
 
-        # Result file format: pair_id,label (csv file) 
+        # Result file format: pair_id,label (csv file)
 
         col_names = ['pair_id', 'label']
 
@@ -107,7 +107,7 @@ class MediqaEvaluator:
         """
         submission_file_path = client_payload["submission_file_path"]
 
-        # Result file format: q_id,a_id,label{0/1} 
+        # Result file format: q_id,a_id,label{0/1}
 
         col_names = ['question_id','answer_id', 'label']
 
@@ -127,7 +127,6 @@ class MediqaEvaluator:
 
         accuracy = s1.size / gold_truth.size
 
-
         question_ids = []
         correct_answers = {}
         for index, row in gold_truth.iterrows():
@@ -142,41 +141,30 @@ class MediqaEvaluator:
 
                 correct_answers[qid].append(row['answer_id'])
 
-
-        P1 = 0.
-        P5 = 0.
-        P10 = 0.
+        Pr = 0.
         spearman = 0.
         pv = 0.
-        ref_sizeAt5 = 0.
-        ref_sizeAt10 = 0.
+        predictedPositive = 0.
+        correctPredictedPositive = 0.
         mrr = 0.
         sp_nan_ignoredQs = 0
 
         for qid in question_ids:
             submitted_correct_answers = []
             index = 1
-
             first = True
             for _, row in submission[submission['question_id']==qid].iterrows():
                 aid = row['answer_id']
                 if row['label'] == '1':
-                    if first:
-                        mrr += 1. / index
-                        first=False
-
+                    predictedPositive += 1
                     if aid in correct_answers[qid]:
+                        correctPredictedPositive += 1
                         submitted_correct_answers.append(aid)
-
-                        if index == 1:
-                            P1 += 1
-                        if index <= 5:
-                            P5 += 1
-                        if index <= 10:
-                            P10 += 1
+                        if first:
+                            mrr += 1. / index
+                            first=False
 
                 index += 1
-
             matched_gold_subset = []
 
             for x in correct_answers[qid]:
@@ -189,16 +177,11 @@ class MediqaEvaluator:
                 sp_nan_ignoredQs += 1
             spearman += rho
             pv += p_value
-            ref_sizeAt5 += min(5, len(correct_answers[qid]))
-            ref_sizeAt10 += min(10, len(correct_answers[qid]))
-
 
         question_nb = len(question_ids)
         q_nb_spearman = question_nb - sp_nan_ignoredQs
         spearman = spearman / q_nb_spearman
-        P1 = P1 / question_nb
-        P5 = P5 / ref_sizeAt5
-        P10 = P10 / ref_sizeAt10
+        Pr = correctPredictedPositive / predictedPositive
         mrr = mrr / question_nb
 
         if np.isnan(spearman):
@@ -209,9 +192,7 @@ class MediqaEvaluator:
             "score_secondary": spearman,
             "meta" : {
                 "MRR": mrr,
-                "P@1": P1,
-                "P@5": P5,
-                "P@10": P10
+                "Precision": Pr
             }
         }
         return _result_object
@@ -247,3 +228,4 @@ if __name__ == "__main__":
         # Evaluate
         result = aicrowd_evaluator._evaluate(_client_payload, _context)
         print(result)
+
