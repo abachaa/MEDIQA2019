@@ -2,9 +2,9 @@
 
 The MEDIQA challenge is an ACL-BioNLP 2019 shared task aiming to attract further research efforts in Natural Language Inference (NLI), Recognizing Question Entailment (RQE), and their applications in medical Question Answering (QA).  
 
-Website: https://sites.google.com/view/mediqa2019
-Mailing List: https://groups.google.com/forum/#!forum/bionlp-mediqa
-Paper: https://www.aclweb.org/anthology/W19-5039
+- Website: https://sites.google.com/view/mediqa2019
+- Mailing List: https://groups.google.com/forum/#!forum/bionlp-mediqa
+- Paper: https://www.aclweb.org/anthology/W19-5039
 
 Datasets 
 ---------
