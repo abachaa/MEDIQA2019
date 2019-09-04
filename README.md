@@ -4,6 +4,7 @@ The MEDIQA challenge is an ACL-BioNLP 2019 shared task aiming to attract further
 
 Website: https://sites.google.com/view/mediqa2019
 Mailing List: https://groups.google.com/forum/#!forum/bionlp-mediqa
+Paper: https://www.aclweb.org/anthology/W19-5039
 
 Datasets 
 ---------
