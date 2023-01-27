@@ -49,5 +49,5 @@ https://www.aicrowd.com/organizers/mediqa-acl-bionlp
 
 Contact Information
 -------------------
-- Asma Ben Abacha: asma.benabacha@nih.gov
+- Asma Ben Abacha: asma.benabacha AT gmail.com
 https://sites.google.com/site/asmabenabacha/ 
